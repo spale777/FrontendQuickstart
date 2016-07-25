@@ -18,6 +18,11 @@ var gulp        = require('gulp'),
 //  Settings
 //-----------------------------------------
 
+var handleError = function(err){
+    console.log(err);
+    this.emit('end');
+};
+
 var src = {
     js: './src/js/**/*.js',
     sass: './src/sass/**/*.scss',
@@ -42,7 +47,9 @@ var vendor = {
 
 gulp.task('sass', function(){
     return gulp.src(src.sass)
-        .pipe(plumber())
+        .pipe(plumber({
+            errorHandler: handleError
+        }))
         .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(cleanCss())
@@ -58,7 +65,9 @@ gulp.task('sass', function(){
 
 gulp.task('js', function(){
     return gulp.src(src.js)
-        .pipe(plumber())
+        .pipe(plumber({
+            errorHandler: handleError
+        }))
         .pipe(sourcemaps.init())
         .pipe(uglify())
         .pipe(concat(dist.jsName))
