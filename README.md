@@ -3,7 +3,7 @@
 ### Install
 
 Run ***npm install*** from the command line in the directory where you placed these files. When npm is done you will be
-able to use *** gulp *** command to run the default task.
+able to use ***gulp*** command to run the default task.
 
 ### Dependencies
 
