@@ -34,7 +34,7 @@ var dist = {
     css: './dist/css/',
     img: './dist/img/',
     jsName: 'app.min.js',
-    cssName: 'app.min.js'
+    cssName: 'app.min.css'
 }
 
 var vendor = {
